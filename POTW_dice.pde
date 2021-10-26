@@ -2,7 +2,7 @@ import queasycam.*;
 
 QueasyCam cam;
 
-Collection collection1;
+AxialCollection collection1;
 
 void setup(){
   size(800, 800, P3D);
@@ -16,7 +16,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(4, 1, 1);
+  collection1 = new AxialCollection(5, 5, 5);
 }
 
 void draw(){
