@@ -2,7 +2,7 @@ import queasycam.*;
 
 QueasyCam cam;
 
-Die die1, die2;
+Collection collection1;
 
 void setup(){
   size(800, 800, P3D);
@@ -15,19 +15,19 @@ void setup(){
   cam.pan = .3722;
   
   rectMode(CENTER);
-  
-  die1 = new Die(0, 0, 0, 6);
-  die2 = new Die(0, 50, 0, 5);
+
+  collection1 = new Collection(4, 1, 1);
 }
 
 void draw(){
   background(180);
-  die1.draw();
-  die2.draw();
+  
+  collection1.draw();
 }
 
 void mousePressed() {
  println(cam.position);
  println(cam.tilt);
  println(cam.pan);
+ println(collection1.coordinates());
 }

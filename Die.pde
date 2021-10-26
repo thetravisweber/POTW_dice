@@ -2,7 +2,7 @@ public class Die {
   
   private int x,y,z,side_up;
   
-  private int size = 20;
+  public int size = 20;
   
   public Die(int x, int y, int z, int side_up) {
     this.x = x;
@@ -12,10 +12,15 @@ public class Die {
   }
   
   public void draw() {
-     translate(x, y, z);
+     pushMatrix();
+     translate(x*size, y*size, z*size);
      fill(255);
+     //sphere(size/10);
+     //text(x, 0, size/2);
+     //noFill();
      box(size);
      this.drawSides();
+     popMatrix();
   }
   
   private void drawSides()
@@ -88,5 +93,10 @@ public class Die {
   
   private void pip(float x_percent, float y_percent) {
     ellipse(x_percent / 100 * size, y_percent / 100 * size, size/10, size/10);
+  }
+  
+  public String coordinates() {
+   return "(" + String.valueOf(x) + "," + String.valueOf(y) + ","
+      + String.valueOf(z) + ")";
   }
 }
