@@ -11,7 +11,6 @@ int north_face = 0;
 
 void setup(){
   size(800, 800, P3D);
-  //fullScreen(1, P3D);
   cam = new QueasyCam(this);
   cam.speed = .2;
   cam.sensitivity = 0.3;
@@ -22,8 +21,6 @@ void setup(){
   rectMode(CENTER);
 
   collection1 = new AxialCollection(1, 1, 1);
-  die1 = new Die(0.5,0.5,0.5);
-  die2 = new Die(0,0,2.5);
   mousePressed();
   
 }
@@ -31,12 +28,7 @@ void setup(){
 void draw(){
   background(180);
   
-  //collection1.draw();
-  if (freeRotate) {
-    die1.rotateFreely(); 
-  }
-  die1.draw();
-  //die2.draw();
+  collection1.draw();
   
   drawAxialLines();
 }
@@ -54,30 +46,7 @@ void drawAxialLines() {
 }
 
 void mousePressed() {
- //println(cam.position);
- //println(cam.tilt);
- //println(cam.pan);
- //println(die1.orientation());
- println(up_face%6+1, north_face%6+1);
- die1.setSideUp(up_face+1);
- die1.setSideNorth(north_face+1);
- north_face++;
- if (north_face >= 6) {
-   up_face++;
-   north_face=0;
- }
-}
-
-void keyPressed() {
-  switch (key) {
-    case 'x':
-      die1.orientation.x+=PI/2;
-      break;
-    case 'y':
-      die1.orientation.y+=PI/2;
-      break;
-    case 'z':
-      die1.orientation.z+=PI/2;
-      break;
-  }
+ println(cam.position);
+ println(cam.tilt);
+ println(cam.pan);
 }
