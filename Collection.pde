@@ -9,7 +9,7 @@ public class Collection {
     for (int j = 0; j < y_layers; j++) {
       ArrayList<Die> z_layer = new ArrayList<Die>();
       for (int k = 0; k < z_layers; k++) {
-        z_layer.add(new Die(i, j, k, 4));
+        z_layer.add(new Die(i, j, k));
       }
       y_layer.add(z_layer);
     }
