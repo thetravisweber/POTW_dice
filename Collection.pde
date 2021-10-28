@@ -12,16 +12,37 @@ public class Collection {
       for (int k = 0; k < z_layers; k++) {
         z_layer.add(new Die(i, j, k));
         Die die = z_layer.get(k);
+        
+        //if (i==0 && j==0 && k==0) {
+        //  z_layer.get(k).setSideNorth(4); 
+        //}
+        //if (j > 0) {
+        //  z_layer.get(k).setSideUp(y_layer.get(j-1).get(k).getBottomSide());
+        //}
+        //if (i > 0) {
+        //  z_layer.get(k).setSideNorth(Dice.get(i-1).get(j).get(k).getSouthSide());
+        //}
+        
+        
         switch(counter) {
-          case 0:
+          case 0: // [0,0,0]
             die.setSideUp(5);
-            die.setSideNorth(1);
+            die.setSideNorth(3);
+            //die.turnRed();
             break;
-          case 1:
+          case 1: // [0,0,1]
             die.setSideUp(2);
-            die.setSideNorth(4);
+            die.setSideNorth(3);
             break;
-          case 2:
+          case 2: // [0,1,0]
+            die.setSideUp(2);
+            die.setSideNorth(3);
+            break;
+          case 3: // [0,1,1]
+            die.setSideUp(5);
+            die.setSideNorth(3);
+            break;
+          case 4:
             die.turnBlue();
             break;
         }

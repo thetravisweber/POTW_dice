@@ -6,7 +6,7 @@ public class Die {
   private int side_north = 4;
   private boolean rotating_x, rotating_y, rotating_z = false;
   private float rotating_speed = 0.01;
-  private boolean is_blue = false;
+  private boolean is_blue, is_red = false;
   
   public int size = 20;
   
@@ -134,7 +134,7 @@ public class Die {
      translate(this.position.x, this.position.y, this.position.z);
      this.rotateForOrientation();
      
-     fill(255 * int(!is_blue),255*int(!is_blue),255);
+     fill(255 * int(!is_blue),255*int(!is_blue)*int(!is_red),255*int(!is_red));
      box(size);
      
      this.drawSides();
@@ -143,6 +143,10 @@ public class Die {
   
   public void turnBlue() {
     this.is_blue = true; 
+  }
+  
+  public void turnRed() {
+    this.is_red = true;
   }
   
   private void rotateForOrientation() {

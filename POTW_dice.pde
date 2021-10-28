@@ -20,7 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new AxialCollection(2,2,1);
+  collection1 = new Collection(1,2,2);
   
 }
 
