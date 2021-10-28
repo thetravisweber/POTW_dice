@@ -98,6 +98,56 @@ public class Collection {
             die.setSideUp(1);
             die.setSideNorth(3);
             break;
+            
+          //// START
+          
+          
+          case "020": // [0,0,0]
+            die.setSideUp(5);
+            die.setSideNorth(3);
+            break;
+          case "021": // [0,0,1]
+            die.setSideUp(2);
+            die.setSideNorth(3);
+            break;
+          case "120": // [1,0,0]
+            die.setSideUp(2);
+            die.setSideNorth(4);
+            break;
+          case "121": // [1,0,1]
+            die.setSideUp(5);
+            die.setSideNorth(4);
+            break;
+          case "1202": // [1,1,0]
+            die.setSideUp(5);
+            die.setSideNorth(4);
+            break;
+          case "022":
+            die.setSideUp(5);
+            die.setSideNorth(3);
+            break;
+          case "122":
+            die.setSideUp(2);
+            die.setSideNorth(4);
+            break;
+          case "220":
+            die.setSideUp(6);
+            die.setSideNorth(3);
+            break;
+          case "221":
+            die.setSideUp(1);
+            die.setSideNorth(3);
+            break;
+          case "222":
+            die.setSideUp(6);
+            die.setSideNorth(3);
+            break;
+          
+          
+          //// END
+            
+            
+            
           default:
             die.turnBlue();
             println(i,j,k);
