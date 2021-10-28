@@ -4,9 +4,9 @@ public class Die {
   public PVector orientation;
   private int side_up = 0;
   private int side_north = 4;
-  private float x_rot,y_rot,z_rot=0;
   private boolean rotating_x, rotating_y, rotating_z = false;
   private float rotating_speed = 0.01;
+  private boolean is_blue = false;
   
   public int size = 20;
   
@@ -16,6 +16,16 @@ public class Die {
     this.position = new PVector(x*size,y*size,z*size);
     mapSideNumToPipNum = new int[] {6,2,1,5,3,4};
     this.setSideUp(1);
+  }
+  
+  public int getSouthSide() {
+    if (side_north == 0) { return 1; }
+    return 7 - side_north; 
+  }
+  
+  public int getBottomSide() {
+   if (side_up == 0) { return 1; }
+   return 7 - side_up; 
   }
   
   // defining Up to be Negative Y
@@ -124,11 +134,15 @@ public class Die {
      translate(this.position.x, this.position.y, this.position.z);
      this.rotateForOrientation();
      
-     fill(255);
+     fill(255 * int(!is_blue),255*int(!is_blue),255);
      box(size);
      
      this.drawSides();
      popMatrix();
+  }
+  
+  public void turnBlue() {
+    this.is_blue = true; 
   }
   
   private void rotateForOrientation() {

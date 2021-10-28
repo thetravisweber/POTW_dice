@@ -20,8 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new AxialCollection(1, 1, 1);
-  mousePressed();
+  collection1 = new Collection(2,2,2);
   
 }
 
@@ -30,7 +29,7 @@ void draw(){
   
   collection1.draw();
   
-  drawAxialLines();
+  //drawAxialLines();
 }
 
 void drawAxialLines() {
@@ -49,4 +48,5 @@ void mousePressed() {
  println(cam.position);
  println(cam.tilt);
  println(cam.pan);
+ saveFrame("images/frame-######.png");
 }
