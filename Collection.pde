@@ -4,7 +4,6 @@ public class Collection {
  public ArrayList<ArrayList<ArrayList<Die>>> Dice = new ArrayList<ArrayList<ArrayList<Die>>>(); 
   
  public Collection(int x_layers, int y_layers, int z_layers) {
-   int counter = 0;
    for (int i = 0; i < x_layers; i++) {
     ArrayList<ArrayList<Die>> y_layer = new ArrayList<ArrayList<Die>>();
     for (int j = 0; j < y_layers; j++) {
@@ -23,43 +22,47 @@ public class Collection {
         //  z_layer.get(k).setSideNorth(Dice.get(i-1).get(j).get(k).getSouthSide());
         //}
         
-        
-        switch(counter) {
-          case 0: // [0,0,0]
+        // doing it as a string to preserve order
+        String counterString = String.valueOf(i) + String.valueOf(j) + String.valueOf(k);
+        switch(counterString) {
+          case "000": // [0,0,0]
             die.setSideUp(5);
             die.setSideNorth(3);
             //die.turnRed();
             break;
-          case 1: // [0,0,1]
+          case "001": // [0,0,1]
             die.setSideUp(2);
             die.setSideNorth(3);
             break;
-          case 2: // [0,1,0]
+          case "010": // [0,1,0]
             die.setSideUp(2);
             die.setSideNorth(3);
             break;
-          case 3: // [0,1,1]
+          case "011": // [0,1,1]
             die.setSideUp(5);
             die.setSideNorth(3);
             break;
-          case 4: // [1,0,0]
+          case "100": // [1,0,0]
             die.setSideUp(2);
             die.setSideNorth(4);
             break;
-          case 5: // [1,0,1]
+          case "101": // [1,0,1]
             die.setSideUp(5);
             die.setSideNorth(4);
             break;
-          case 6: // [1,1,0]
+          case "110": // [1,1,0]
             die.setSideUp(5);
             die.setSideNorth(4);
             break;
-          case 7: // [1,1,1]
+          case "111": // [1,1,1]
             die.setSideUp(2);
             die.setSideNorth(4);
+            break;
+          case "002":
+            die.turnBlue();
+            println(i, j, k);
             break;
         }
-        counter++;
       }
       y_layer.add(z_layer);
     }
