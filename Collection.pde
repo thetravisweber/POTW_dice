@@ -42,8 +42,21 @@ public class Collection {
             die.setSideUp(5);
             die.setSideNorth(3);
             break;
-          case 4:
-            die.turnBlue();
+          case 4: // [1,0,0]
+            die.setSideUp(2);
+            die.setSideNorth(4);
+            break;
+          case 5: // [1,0,1]
+            die.setSideUp(5);
+            die.setSideNorth(4);
+            break;
+          case 6: // [1,1,0]
+            die.setSideUp(5);
+            die.setSideNorth(4);
+            break;
+          case 7: // [1,1,1]
+            die.setSideUp(2);
+            die.setSideNorth(4);
             break;
         }
         counter++;
