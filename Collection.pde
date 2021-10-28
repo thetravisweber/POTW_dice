@@ -59,9 +59,24 @@ public class Collection {
             die.setSideNorth(4);
             break;
           case "002":
-            die.turnBlue();
-            println(i, j, k);
+            die.setSideUp(5);
+            die.setSideNorth(3);
             break;
+          case "012":
+            die.setSideUp(2);
+            die.setSideNorth(3);
+            break;
+          case "102":
+            die.setSideUp(2);
+            die.setSideNorth(4);
+            break;
+          case "112":
+            die.setSideUp(5);
+            die.setSideNorth(4);
+            break;
+          default:
+            die.turnBlue();
+            println(i,j,k);
         }
       }
       y_layer.add(z_layer);
