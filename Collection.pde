@@ -5,24 +5,27 @@ public class Collection {
   
  public Collection(int x_layers, int y_layers, int z_layers) {
    for (int i = 0; i < x_layers; i++) {
-    ArrayList<ArrayList<Die>> y_layer = new ArrayList<ArrayList<Die>>();
+    this.Dice.add(new ArrayList<ArrayList<Die>>());
     for (int j = 0; j < y_layers; j++) {
-      ArrayList<Die> z_layer = new ArrayList<Die>();
+      this.Dice.get(i).add(new ArrayList<Die>());
       for (int k = 0; k < z_layers; k++) {
-        z_layer.add(new Die(i, j, k));
-        if (i==0 && j==0 && k==0) {
-          z_layer.get(k).setSideNorth(4); 
-        }
-        if (j > 0) {
-          z_layer.get(k).setSideUp(y_layer.get(j-1).get(k).getBottomSide());
-        }
-        if (i > 0) {
-          z_layer.get(k).setSideNorth(Dice.get(i-1).get(j).get(k).getSouthSide());
-        }
+        Die baby = new Die(i, j, k);
+        this.Dice.get(i).get(j).add(baby);
+        this.orientDie(baby,i,j,k);
       }
-      y_layer.add(z_layer);
     }
-    this.Dice.add(y_layer);
+   }
+ }
+ 
+ public void orientDie(Die die, int x, int y, int z) {
+   if (x==0 && y==0 && z==0) {
+     die.setSideNorth(4); 
+   }
+   if (y > 0) {
+     die.setSideUp(Dice.get(x).get(y-1).get(z).getBottomSide());
+   }
+   if (x > 0) {
+     die.setSideNorth(Dice.get(x-1).get(y).get(z).getSouthSide());
    }
  }
  
