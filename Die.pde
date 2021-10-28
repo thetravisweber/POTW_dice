@@ -33,10 +33,10 @@ public class Die {
    this.side_up = side_up%6;
    // because matrix multiplication is for nerds
    switch (this.side_up) {
-     case 1:
+     case 0:
        this.orientation = new PVector(0,0,0);
        break;
-     case 0:
+     case 1:
        this.orientation = new PVector(PI,0,0);
        break;
      case 2:
@@ -82,10 +82,10 @@ public class Die {
        }
      } else { // 2 or 5 are up
        switch(this.side_north) {
-         case 1:
+         case 0:
            this.orientation.z+=PI/2;
            break;
-         case 0:
+         case 1:
            this.orientation.z+=-PI/2;
            break;
          case 3:
@@ -111,10 +111,10 @@ public class Die {
        case 5:
          this.orientation.y+=-PI/2;
          break;
-       case 1:
+       case 0:
          this.orientation.y+=flip*PI/2-PI/2;
          break;
-       case 0:
+       case 1:
          this.orientation.y+=flip*PI/2+PI/2;
          break;
        default:
@@ -181,7 +181,6 @@ public class Die {
       translate(0, 0, size*.501 * (1-2*int(side_num==4)));
       rotateZ(PI/2);
     }
-    
     this.display_pip_pattern(side_num);
     popMatrix();
   }
@@ -189,7 +188,7 @@ public class Die {
   private void display_pip_pattern(int side_num)
   {
     switch (this.sideNumToPipNum(side_num)) {
-      case 1:
+      case 6:
         this.pip(0, 0);
         break;
       case 2: 
@@ -214,7 +213,7 @@ public class Die {
         this.pip(-25, 25);
         this.pip(-25, -25);
         break;
-      case 6:
+      case 1:
         this.pip(25, 25);
         this.pip(25, 0);
         this.pip(25, -25);
