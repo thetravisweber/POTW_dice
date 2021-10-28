@@ -20,7 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(3,2,1);
+  collection1 = new Collection(3,2,3);
   
 }
 

@@ -82,6 +82,22 @@ public class Collection {
             die.setSideUp(1);
             die.setSideNorth(3);
             break;
+          case "201":
+            die.setSideUp(1);
+            die.setSideNorth(3);
+            break;
+          case "211":
+            die.setSideUp(6);
+            die.setSideNorth(3);
+            break;
+          case "202":
+            die.setSideUp(6);
+            die.setSideNorth(3);
+            break;
+          case "212":
+            die.setSideUp(1);
+            die.setSideNorth(3);
+            break;
           default:
             die.turnBlue();
             println(i,j,k);
