@@ -11,17 +11,6 @@ public class Collection {
       for (int k = 0; k < z_layers; k++) {
         z_layer.add(new Die(i, j, k));
         Die die = z_layer.get(k);
-        
-        //if (i==0 && j==0 && k==0) {
-        //  z_layer.get(k).setSideNorth(4); 
-        //}
-        //if (j > 0) {
-        //  z_layer.get(k).setSideUp(y_layer.get(j-1).get(k).getBottomSide());
-        //}
-        //if (i > 0) {
-        //  z_layer.get(k).setSideNorth(Dice.get(i-1).get(j).get(k).getSouthSide());
-        //}
-        
         // doing it as a string to preserve order
         String counterString = String.valueOf(i) + String.valueOf(j) + String.valueOf(k);
         switch(counterString) {
@@ -98,27 +87,19 @@ public class Collection {
             die.setSideUp(1);
             die.setSideNorth(3);
             break;
-            
-          //// START
-          
-          
-          case "020": // [0,0,0]
+          case "020":
             die.setSideUp(5);
             die.setSideNorth(3);
             break;
-          case "021": // [0,0,1]
+          case "021":
             die.setSideUp(2);
             die.setSideNorth(3);
             break;
-          case "120": // [1,0,0]
+          case "120":
             die.setSideUp(2);
             die.setSideNorth(4);
             break;
-          case "121": // [1,0,1]
-            die.setSideUp(5);
-            die.setSideNorth(4);
-            break;
-          case "1202": // [1,1,0]
+          case "121":
             die.setSideUp(5);
             die.setSideNorth(4);
             break;
@@ -142,12 +123,6 @@ public class Collection {
             die.setSideUp(6);
             die.setSideNorth(3);
             break;
-          
-          
-          //// END
-            
-            
-            
           default:
             die.turnBlue();
             println(i,j,k);
