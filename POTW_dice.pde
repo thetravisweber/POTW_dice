@@ -20,7 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(3,3,3);
+  collection1 = new EthonianCollection(3,3,3);
   
 }
 
@@ -29,7 +29,7 @@ void draw(){
   
   collection1.draw();
   
-  drawAxialLines();
+  //drawAxialLines();
 }
 
 void drawAxialLines() {
