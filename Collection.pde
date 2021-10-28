@@ -12,10 +12,20 @@ public class Collection {
       for (int k = 0; k < z_layers; k++) {
         z_layer.add(new Die(i, j, k));
         Die die = z_layer.get(k);
-        if (counter == 0) {
-           die.setSideUp(5);
-           die.setSideNorth(3);
+        switch(counter) {
+          case 0:
+            die.setSideUp(5);
+            die.setSideNorth(1);
+            break;
+          case 1:
+            die.setSideUp(2);
+            die.setSideNorth(4);
+            break;
+          case 2:
+            die.turnBlue();
+            break;
         }
+        counter++;
       }
       y_layer.add(z_layer);
     }

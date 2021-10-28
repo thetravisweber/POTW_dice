@@ -20,7 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(1,1,1);
+  collection1 = new AxialCollection(2,2,1);
   
 }
 
@@ -29,7 +29,7 @@ void draw(){
   
   collection1.draw();
   
-  //drawAxialLines();
+  drawAxialLines();
 }
 
 void drawAxialLines() {
