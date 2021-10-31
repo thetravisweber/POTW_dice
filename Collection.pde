@@ -2,8 +2,16 @@ public class Collection {
  
  // ugly
  public ArrayList<ArrayList<ArrayList<Die>>> Dice = new ArrayList<ArrayList<ArrayList<Die>>>(); 
+   
+ public OrientationAlgorithm orienter;
   
- public Collection(int x_layers, int y_layers, int z_layers) {
+ public Collection(int x_layers, int y_layers, int z_layers, OrientationAlgorithm orienter) {
+   this.orienter = orienter;
+   this.orienter.setParent(this);
+   this.generateDice(x_layers, y_layers, z_layers);
+ }
+ 
+ private void generateDice(int x_layers, int y_layers, int z_layers) {
    for (int i = 0; i < x_layers; i++) {
     this.Dice.add(new ArrayList<ArrayList<Die>>());
     for (int j = 0; j < y_layers; j++) {
@@ -11,21 +19,9 @@ public class Collection {
       for (int k = 0; k < z_layers; k++) {
         Die baby = new Die(i, j, k);
         this.Dice.get(i).get(j).add(baby);
-        this.orientDie(baby,i,j,k);
+        this.orienter.orientDie(baby,i,j,k);
       }
     }
-   }
- }
- 
- public void orientDie(Die die, int x, int y, int z) {
-   if (x==0 && y==0 && z==0) {
-     die.setSideNorth(4); 
-   }
-   if (y > 0) {
-     die.setSideUp(Dice.get(x).get(y-1).get(z).getBottomSide());
-   }
-   if (x > 0) {
-     die.setSideNorth(Dice.get(x-1).get(y).get(z).getSouthSide());
    }
  }
  

@@ -1,7 +1,9 @@
+// TODO: make this not a subclass, and instead add a flag to the collection class
+//  to only draw the axes
 public class AxialCollection extends Collection {
  
-  public AxialCollection(int x_layers, int y_layers, int z_layers) {
-    super(x_layers, y_layers, z_layers);
+  public AxialCollection(int x_layers, int y_layers, int z_layers, OrientationAlgorithm orienter) {
+    super(x_layers, y_layers, z_layers, orienter);
   }
   
   public void draw() {

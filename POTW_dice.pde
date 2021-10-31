@@ -10,7 +10,7 @@ int up_face = 4;
 int north_face = 0;
 
 void setup(){
-  size(800, 800, P3D);
+  fullScreen(P3D, 2);
   cam = new QueasyCam(this);
   cam.speed = .2;
   cam.sensitivity = 0.3;
@@ -20,7 +20,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(3,3,3);
+  collection1 = new Collection(3,3,3, new BadOrienter());
   
 }
 
