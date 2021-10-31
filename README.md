@@ -12,7 +12,7 @@ Just clone this repository, and open up the newly cloned folder using [Processin
 
 ### Code Editing
 
-The first (and potentially only) thing worth editing is the `orientDie` function in the Collection Class. This is the sole function responsible for the generation of the orientation of all die.
+In order to allow for easy swapping of dice orientation algorithms, and tracking of algorithms, we use a Command Pattern to pass in the wanted algorithm as the fourth parameter to the collection class. To make a new algorithm, simply implement the `OrientationAlgorithm` interface, and use the `orientDie` function to change the orientation of every die. You can access the orientation of neighboring dice, using `parent.Dice` variable from within the orientation algorithm class you are editing.
 
 ## About the Math
 
