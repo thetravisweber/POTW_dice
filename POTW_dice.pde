@@ -10,7 +10,7 @@ int up_face = 4;
 int north_face = 0;
 
 void setup(){
-  fullScreen(P3D, 2);
+  fullScreen(P3D, 3);
   cam = new QueasyCam(this);
   cam.speed = .2;
   cam.sensitivity = 0.3;
