@@ -18,6 +18,8 @@ In order to allow for easy swapping of dice orientation algorithms, and tracking
 
 If you consider the center cube of the 3x3x3, and then consider attaching a cube to all of its sides, then the resulting ends of each "axes" are opposite of the face of that side of the center cube, facing in the same direction. For this reason, we can know that on a 3x3x3 cube, each face will have a different number of pips on center die of the face facing outward. For this reason, we can describe the faces of each Configuration using a table indexed by the number on the center cube for each face.
 
+[Proof that the number of pips showing on a 3x3x3 collection of dice that meets the problem specifications is 189](https://github.com/thetravisweber/POTW_dice/wiki/Proof-that-the-number-of-pips-showing-on-a-3x3x3-collection-of-dice-that-meets-the-problem-specifications-is-189)
+
 For example, here is the table for our one known solution, the Ethonian Collection:
 
 | face  | 1     | 2     | 3     | 4     | 5     | 6     | total |
@@ -35,8 +37,6 @@ All of the middle columns indicate how many times that number shows up on that f
 ### Unanswered Questions
 
 Is it possible to get a configuration in which each side of the die is not showing nine times?
-
-Is there a pattern for the total number of pips shown on the outside as this moves into larger and larger dimensions? (eg 5x5x5)
 
 What is the needed pattern for making a configuration that fits the specifications? Right now I have one known solution, but I am looking for an algorithm that can generate many working configurations.
 
