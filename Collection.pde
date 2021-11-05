@@ -27,6 +27,10 @@ public class Collection {
  
  public void draw()
  {
+   if (this.axial) {
+     this.axialDraw();
+     return;
+   }
    for (ArrayList<ArrayList<Die>> y_layer: this.Dice) {
     for (ArrayList<Die> z_layer: y_layer) {
      for (Die d: z_layer) {

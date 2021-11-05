@@ -10,7 +10,8 @@ int up_face = 4;
 int north_face = 0;
 
 void setup(){
-  fullScreen(P3D, 3);
+  //fullScreen(P3D, 3);
+  size(800, 800, P3D);
   cam = new QueasyCam(this);
   cam.speed = .2;
   cam.sensitivity = 0.3;
@@ -48,5 +49,6 @@ void mousePressed() {
  println(cam.position);
  println(cam.tilt);
  println(cam.pan);
+ collection1.flipAxial();
  saveFrame("images/frame-######.png");
 }
