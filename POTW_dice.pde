@@ -21,7 +21,7 @@ void setup(){
   
   rectMode(CENTER);
 
-  collection1 = new Collection(3,3,3, new BadOrienter());
+  collection1 = new Collection(3,3,3, new EthonianHardcodedOrienter());
   
 }
 

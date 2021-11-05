@@ -1,4 +1,4 @@
-public class EthonianHarcodedOrienter extends SimpleOrienter {
+public class EthonianHardcodedOrienter extends SimpleOrienter {
   public void orientDie(Die die, int x, int y, int z) {
     // doing it as a string to preserve order
     String counterString = String.valueOf(x) + String.valueOf(y) + String.valueOf(z);
